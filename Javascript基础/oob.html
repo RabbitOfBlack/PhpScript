@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>oob</title>
+    <script>
+
+        function A() {
+
+            this.sayHe = function () {
+                alert('this is sayHe...')
+            }
+        }
+        //动态方法
+        A.prototype.sayHello = function () {
+            alert('this is oob...');
+        };
+        //静态方法
+        A.sayHi = function () {
+            alert('this is static...')
+        };
+
+        //A的子类
+        function B() {
+
+        }
+
+        //动态方法需要实例化调用
+        var a = new A();
+        a.sayHello();
+        //静态方法直接调用即可
+        A.sayHi();
+        //子类实例化调用
+        B.prototype = new A();
+        var b = new B();
+        b.sayHello();
+        b.sayHe();
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

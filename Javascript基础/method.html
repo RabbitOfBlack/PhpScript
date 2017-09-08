@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Method</title>
+    <script>
+
+        function max(a,b) {
+            return a>b?a:b;
+        }
+
+        function cal() {
+            var maxValue = arguments[0];
+            for(var i=1;i<arguments.length;i++){
+                maxValue = max(maxValue,arguments[i])
+            }
+            console.log(maxValue)
+        }
+
+        cal(1,23,35,21,89,-6)
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
